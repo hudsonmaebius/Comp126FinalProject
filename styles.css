@@ -1,0 +1,113 @@
+:root {
+    --bg-color: #FDF6E3;      /* Cream */
+    --text-color: #3E2723;    /* Dark Brown */
+    --accent-color: #556B2F;  /* Olive Green */
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Easy readable font */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
+
+/* --- HEADER & NAVIGATION (Flexbox) --- */
+header {
+    background-color: var(--white);
+    padding: 1rem;
+    border-bottom: 2px solid var(--text-color);
+}
+
+nav {
+    display: flex;
+    flex-direction: column; /* Mobile: Stack vertical */
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Accessibility: Focus State */
+nav a:focus, nav a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* --- MAIN LAYOUT --- */
+main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers content */
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif; /* Fancy font for headers */
+}
+
+/* --- GRID LAYOUT (The "Grid" Requirement) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    gap: 2rem;
+}
+
+/* Card Style for Recipes/Locations */
+.card {
+    background: var(--white);
+    border: 1px solid var(--text-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* --- DESKTOP VIEW (Media Query) --- */
+/* This kicks in when screen is wider than 768px */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row; /* Desktop: Horizontal */
+        justify-content: space-between;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+    }
+}
