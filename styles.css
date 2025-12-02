@@ -6,8 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Easy readable font */
-    background-color: var(--bg-color);
+    font-family: 'Arial', sans-serif; 
     color: var(--text-color);
     line-height: 1.6;
 }
@@ -18,7 +17,7 @@ img {
     display: block; 
 }
 
-/* --- HEADER & NAVIGATION (Flexbox) --- */
+
 header {
     background-color: var(--white);
     padding: 1rem;
@@ -27,7 +26,7 @@ header {
 
 nav {
     display: flex;
-    flex-direction: column; /* Mobile: Stack vertical */
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
@@ -53,17 +52,15 @@ nav a {
     font-weight: bold;
 }
 
-/* Accessibility: Focus State */
 nav a:focus, nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* --- MAIN LAYOUT --- */
 main {
     padding: 2rem 1rem;
     max-width: 1200px;
-    margin: 0 auto; /* Centers content */
+    margin: 0 auto;
 }
 
 section {
@@ -72,17 +69,16 @@ section {
 
 h1, h2, h3 {
     margin-bottom: 1rem;
-    font-family: 'Georgia', serif; /* Fancy font for headers */
+    font-family: 'Georgia', serif; 
 }
 
-/* --- GRID LAYOUT (The "Grid" Requirement) --- */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile: 1 column */
+    grid-template-columns: 1fr; 
     gap: 2rem;
 }
 
-/* Card Style for Recipes/Locations */
+
 .card {
     background: var(--white);
     border: 1px solid var(--text-color);
@@ -90,7 +86,6 @@ h1, h2, h3 {
     border-radius: 8px;
 }
 
-/* --- FOOTER --- */
 footer {
     background-color: var(--text-color);
     color: var(--bg-color);
@@ -99,15 +94,14 @@ footer {
     margin-top: 2rem;
 }
 
-/* --- DESKTOP VIEW (Media Query) --- */
-/* This kicks in when screen is wider than 768px */
+
 @media (min-width: 768px) {
     nav {
-        flex-direction: row; /* Desktop: Horizontal */
+        flex-direction: row; 
         justify-content: space-between;
     }
 
     .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
